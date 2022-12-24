@@ -8,6 +8,7 @@
 	</settings>
 	<typeAliases>
 		<typeAlias type="net.su.vo.HomeVo" alias="HomeVo" />
+		<typeAlias type="net.su.vo.BoardVo" alias="BoardVo"/>
 	</typeAliases>
 	<mappers>
 		<mapper resource="/mybatis/sql/mapper.xml" />

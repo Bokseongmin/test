@@ -1,5 +1,7 @@
 package net.su.dao;
 
-public class HomeDao {
+import org.mybatis.spring.support.SqlSessionDaoSupport;
 
+public class HomeDao extends SqlSessionDaoSupport{
+	
 }

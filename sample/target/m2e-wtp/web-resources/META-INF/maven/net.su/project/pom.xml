@@ -132,6 +132,13 @@
 			<version>${org.springframework-version}</version>
 		</dependency>
 		
+		<!-- mysql -->
+		<dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.29</version>
+        </dependency>
+        
 		<!-- Mybatis Spring -->
 		<dependency>
 			<groupId>org.mybatis</groupId>
