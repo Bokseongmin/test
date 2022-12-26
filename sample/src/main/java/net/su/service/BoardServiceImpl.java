@@ -15,12 +15,15 @@ public class BoardServiceImpl implements BoardService{
 	@Resource
 	private BoardDao boardDao;
 	
-	@Override
 	public List<BoardVo> list() throws Exception {
 		return boardDao.list();
 	}
 
 	public void write(BoardVo vo) throws Exception {
 		boardDao.write(vo);
+	}
+
+	public BoardVo view(int bno) throws Exception {
+		return boardDao.view(bno);
 	}
 }

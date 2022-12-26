@@ -14,4 +14,9 @@
 		VALUES (#{title}, #{content}, #{writer});
 	</insert>
 	
+	<select id="board_view" parameterType="int" resultType="BoardVo">
+		SELECT bno, title, content, writer, regDate, viewCnt
+		FROM board
+		WHERE bno=#{bno};
+	</select>
 </mapper>

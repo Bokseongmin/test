@@ -9,7 +9,7 @@ import net.su.vo.BoardVo;
 @Repository("BoardDao")
 public class BoardDao extends CommonDao{
 	
-	// 게시판 조회
+	// 게시판 목록
 	public List<BoardVo> list() throws Exception {
 		return getSqlSession().selectList("mapper.board_list");
 	}
@@ -17,5 +17,10 @@ public class BoardDao extends CommonDao{
 	// 글 작성
 	public void write(BoardVo vo) throws Exception {
 		getSqlSession().insert("mapper.board_write", vo);
+	}
+	
+	// 조회
+	public BoardVo view(int bno) throws Exception {
+		return getSqlSession().selectOne("mapper.board_view", bno);
 	}
 }
