@@ -23,4 +23,9 @@ public class BoardDao extends CommonDao{
 	public BoardVo view(int bno) throws Exception {
 		return getSqlSession().selectOne("mapper.board_view", bno);
 	}
+	
+	//수정
+	public void modify(BoardVo vo) throws Exception {
+		getSqlSession().update("mapper.board_modify", vo);
+	}
 }

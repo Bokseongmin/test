@@ -10,4 +10,6 @@ public interface BoardService {
 	public void write(BoardVo vo) throws Exception; //글 작성
 	
 	public BoardVo view(int bno) throws Exception; //조회
+	
+	public void modify(BoardVo vo) throws Exception; //수정
 }

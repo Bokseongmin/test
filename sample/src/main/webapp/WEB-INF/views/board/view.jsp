@@ -9,15 +9,17 @@
 <body>
 <form method="post">
 	<label>제목</label>
-	<input type="text" name="title" value="${view.title}"/><br/>
+	${view.title}<br/>
 	
 	<label>작성자</label>
-	<input type="text" name="writer" value="${view.writer}"/><br/>
+	${view.writer}<br/>
 	
 	<label>내용</label>
-	<textarea cols="50" rows="5" name="content">${view.title}</textarea><br/>
+	${view.title}<br/>
 	
-	<button type="submit">작성</button>
+	<div>
+	<a href="/board/modify?bno=${view.bno}">게시물 수정</a>
+	</div>
 </form>
 </body>
 </html>
