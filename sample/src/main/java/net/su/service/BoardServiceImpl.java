@@ -46,4 +46,8 @@ public class BoardServiceImpl implements BoardService{
 	public List<BoardVo> listSearch(int displayPost, int postNum, String searchType, String keyword) throws Exception {
 		return boardDao.listSearch(displayPost, postNum, searchType, keyword);
 	}
+	
+	public int searchCount(String searchType, String keyword) throws Exception {
+		return boardDao.searchCount(searchType, keyword);
+	}
 }

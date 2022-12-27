@@ -20,4 +20,6 @@ public interface BoardService {
 	public List<BoardVo> listPage(int displayPost, int postNum) throws Exception; //글 목록 + 페이징
 	
 	public List<BoardVo> listSearch(int displayPost, int postNum, String searchType, String keyword) throws Exception; // 글 목록 + 페이징 + 검색
+
+	public int searchCount(String searchType, String keyword) throws Exception;//게시물 총 갯수 + 검색
 }

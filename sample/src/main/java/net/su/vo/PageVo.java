@@ -26,8 +26,10 @@ public class PageVo {
 	private int startPageNum;
 
 	// 다음/이전 표시 여부
-	private boolean prev;
-	private boolean next;
+	private boolean prev, next;
+	
+	private String searchType, keyword;
+	private String searchType_keyword;
 
 	public int getNum() {
 		return num;
@@ -131,4 +133,33 @@ public class PageVo {
 		displayPost = (num - 1) * postNum;
 
 	}
+
+	public String getSearchType() {
+		return searchType;
+	}
+
+	public void setSearchType(String searchType) {
+		this.searchType = searchType;
+	}
+
+	public String getKeyword() {
+		return keyword;
+	}
+
+	public void setKeyword(String keyword) {
+		this.keyword = keyword;
+	}
+
+	public String getSearchType_keyword() {
+		if(searchType.equals("") || keyword.equals("")) {
+            return "&searchType=&keyword=";
+        } else {
+            return "&searchType=" + searchType + "&keyword=" + keyword;
+        }
+	}
+
+	public void setSearchType_keyword(String searchType_keyword) {
+		this.searchType_keyword = searchType_keyword;
+	}
+	
 }

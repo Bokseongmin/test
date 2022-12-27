@@ -18,7 +18,7 @@
 	${view.writer}<hr/>
 	
 	<label>내용</label>
-	${view.title}<hr/>
+	${view.content}<hr/>
 	
 	<div>
 	<a href="/board/modify?bno=${view.bno}">게시물 수정</a>

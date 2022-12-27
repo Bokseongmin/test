@@ -107,8 +107,10 @@ public class BoardController {
 		PageVo page = new PageVo();
 
 		page.setNum(num);
-		page.setCount(service.count());
+		page.setCount(service.searchCount(searchType, keyword));
 
+		page.setSearchType(searchType);
+		page.setKeyword(keyword);
 		List<BoardVo> list = service.listSearch(page.getDisplayPost(), page.getPostNum(), searchType, keyword);
 
 		model.addAttribute("list", list);
