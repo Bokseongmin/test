@@ -49,4 +49,28 @@
 		LIMIT #{displayPost}, #{postNum};
 	</select>
 	
+	<!-- 게시판 목록 + 페이징 + 검색-->
+	<select id="board_listSearch" parameterType="hashMap" resultType="BoardVo">
+		SELECT bno, title, writer, regDate, viewCnt
+		FROM board
+		<if test='searchType.equals("title")'>
+            WHERE title LIKE concat('%', #{keyword}, '%')
+        </if>
+
+        <if test='searchType.equals("content")'>
+            WHERE content LIKE concat('%', #{keyword}, '%')
+        </if>
+
+        <if test='searchType.equals("title_content")'>
+            WHERE title LIKE concat('%', #{keyword}, '%')
+            or content LIKE concat('%', #{keyword}, '%')
+        </if>
+
+        <if test='searchType.equals("writer")'>
+            WHERE writer LIKE concat('%', #{keyword}, '%')
+        </if>
+		ORDER BY bno desc
+		LIMIT #{displayPost}, #{postNum};
+	</select>
+	
 </mapper>

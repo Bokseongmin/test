@@ -49,4 +49,17 @@ public class BoardDao extends CommonDao {
 
 		return getSqlSession().selectList("mapper.board_listPage", data);
 	}
+	
+	// 글 목록 + 페이징 + 검색
+	public List<BoardVo> listSearch(int displayPost, int postNum, String searchType, String keyword) throws Exception {
+		HashMap<String, Object> data = new HashMap<String, Object>();
+		
+		data.put("displayPost", displayPost);
+		data.put("postNum", postNum);
+		
+		data.put("searchType", searchType);
+		data.put("keyword", keyword);
+		
+		return getSqlSession().selectList("mapper.board_listSearch", data);
+	}
 }
