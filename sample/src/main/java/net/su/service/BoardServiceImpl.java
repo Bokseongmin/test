@@ -30,4 +30,8 @@ public class BoardServiceImpl implements BoardService{
 	public void modify(BoardVo vo) throws Exception {
 		boardDao.modify(vo);
 	}
+
+	public void delete(int bno) throws Exception {
+		boardDao.delete(bno);
+	}
 }

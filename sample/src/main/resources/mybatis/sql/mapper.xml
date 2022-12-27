@@ -20,10 +20,18 @@
 		WHERE bno=#{bno};
 	</select>
 	
+	<!-- 수정 -->
 	<update id="board_modify" parameterType="BoardVo">
 		UPDATE board
         SET             title = #{title},
                         content = #{content}
         WHERE           bno = #{bno};
 	</update>
+	
+	<!-- 삭제 -->
+	<delete id="board_delete" parameterType="int">
+		DELETE
+		FROM board
+		WHERE bno=#{bno};
+	</delete>
 </mapper>

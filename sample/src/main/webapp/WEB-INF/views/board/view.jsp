@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,18 +7,22 @@
 <title>Insert title here</title>
 </head>
 <body>
+<div id="nav">
+ <%@ include file="../include/nav.jsp" %>
+</div>
 <form method="post">
-	<label>Á¦¸ñ</label>
-	${view.title}<br/>
+	<label>ì œëª©</label>
+	${view.title}<hr/>
 	
-	<label>ÀÛ¼ºÀÚ</label>
-	${view.writer}<br/>
+	<label>ì‘ì„±ì</label>
+	${view.writer}<hr/>
 	
-	<label>³»¿ë</label>
-	${view.title}<br/>
+	<label>ë‚´ìš©</label>
+	${view.title}<hr/>
 	
 	<div>
-	<a href="/board/modify?bno=${view.bno}">°Ô½Ã¹° ¼öÁ¤</a>
+	<a href="/board/modify?bno=${view.bno}">ê²Œì‹œë¬¼ ìˆ˜ì •</a>
+	<a href="/board/delete?bno=${view.bno}">ê²Œì‹œë¬¼ ì‚­ì œ</a>
 	</div>
 </form>
 </body>
