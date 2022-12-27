@@ -14,4 +14,8 @@ public interface BoardService {
 	public void modify(BoardVo vo) throws Exception; //수정
 	
 	public void delete(int bno) throws Exception; //삭제
+	
+	public int count() throws Exception; //글 갯수
+
+	public List<BoardVo> listPage(int displayPost, int postNum) throws Exception; //글 목록 + 페이징
 }

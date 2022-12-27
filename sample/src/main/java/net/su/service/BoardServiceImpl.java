@@ -34,4 +34,12 @@ public class BoardServiceImpl implements BoardService{
 	public void delete(int bno) throws Exception {
 		boardDao.delete(bno);
 	}
+
+	public int count() throws Exception {
+		return boardDao.count();
+	}
+
+	public List listPage(int displayPost, int postNum) throws Exception {
+		return boardDao.listPage(displayPost, postNum);
+	}
 }

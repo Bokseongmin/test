@@ -34,4 +34,19 @@
 		FROM board
 		WHERE bno=#{bno};
 	</delete>
+	
+	<!-- 글 갯수 -->
+	<select id="board_count" resultType="int">
+		SELECT count(bno)
+		FROM board;
+	</select>
+	
+	<!-- 게시판 목록 + 페이징 -->
+	<select id="board_listPage" parameterType="hashMap" resultType="BoardVo">
+		SELECT bno, title, writer, regDate, viewCnt
+		FROM board
+		ORDER BY bno desc
+		LIMIT #{displayPost}, #{postNum};
+	</select>
+	
 </mapper>
