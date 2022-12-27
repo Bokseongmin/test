@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import net.su.service.BoardService;
 import net.su.vo.BoardVo;
+import net.su.vo.PageVo;
 
 @Controller
 @RequestMapping("/board/*")
@@ -74,7 +75,27 @@ public class BoardController {
 	//글 목록 + 페이징
 	@RequestMapping(value="/listPage", method=RequestMethod.GET)
 	public void getListPage(@RequestParam("num") int num, Model model) throws Exception {
-		int count = service.count();
+		
+		PageVo page = new PageVo();
+		
+		page.setNum(num);
+		page.setCount(service.count());  
+
+		List list = null; 
+		list = service.listPage(page.getDisplayPost(), page.getPostNum());
+
+		model.addAttribute("list", list);   
+		model.addAttribute("pageNum", page.getPageNum());
+
+		model.addAttribute("startPageNum", page.getStartPageNum());
+		model.addAttribute("endPageNum", page.getEndPageNum());
+		 
+		model.addAttribute("prev", page.isPrev());
+		model.addAttribute("next", page.isNext());  
+
+		model.addAttribute("page", page);
+		model.addAttribute("select", num);
+		/*int count = service.count();
 		
 		int postNum = 10;
 		
@@ -109,6 +130,6 @@ public class BoardController {
 		model.addAttribute("prev", prev);
 		model.addAttribute("next", next);
 		
-		model.addAttribute("select", num);
+		model.addAttribute("select", num);*/
 	}
 }
