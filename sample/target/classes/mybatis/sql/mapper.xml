@@ -94,5 +94,4 @@
             WHERE writer LIKE concat('%', #{keyword}, '%')
         </if>
 	</select>
-	
 </mapper>
