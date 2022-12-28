@@ -20,6 +20,13 @@
 		SET writer = #{writer}, content = #{content} 
 		WHERE rno = #{rno} AND bno = #{bno};
 	</update>
+	
+	<!-- 수정 페이지 -->
+	<select id="reply_select" parameterType="ReplyVo" resultType="ReplyVo">
+		SELECT rno, bno, writer, content, regDate
+		FROM reply
+		WHERE bno=#{bno} AND rno=#{rno};
+	</select>
 
 	<!-- 댓글 삭제 -->
 	<delete id="reply_delete" parameterType="ReplyVo">

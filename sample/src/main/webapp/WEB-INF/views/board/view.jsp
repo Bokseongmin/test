@@ -36,6 +36,12 @@
 				<div>
 					<p>${reply.writer}/ <fmt:formatDate value="${reply.regDate}" pattern="yyyy-MM-dd" /></p>
 					<p>${reply.content }</p>
+
+					<p>
+						<a href="/reply/modify?bno=${view.bno}&rno=${reply.rno}">수정</a> / <a href="/reply/delete?bno=${view.bno}&rno=${reply.rno}">삭제</a>
+					</p>
+
+					<hr />
 				</div>
 			</li>
 		</c:forEach>

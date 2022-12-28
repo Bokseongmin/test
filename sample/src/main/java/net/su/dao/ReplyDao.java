@@ -22,6 +22,11 @@ public class ReplyDao extends CommonDao{
 	public void modify(ReplyVo vo) throws Exception {
 		getSqlSession().update("reply.reply_modify", vo);
 	}
+	
+	//수정 페이지
+	public ReplyVo reply_select(ReplyVo vo) throws Exception {
+		return getSqlSession().selectOne("reply.reply_select", vo);
+	}
 
 	// 댓글 삭제
 	public void delete(ReplyVo vo) throws Exception {

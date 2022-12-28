@@ -13,6 +13,9 @@ public interface ReplyService {
 
 	// 댓글 수정
 	public void modify(ReplyVo vo) throws Exception;
+	
+	// 수정 페이지
+	public ReplyVo reply_select(ReplyVo vo) throws Exception;
 
 	// 댓글 삭제
 	public void delete(ReplyVo vo) throws Exception;

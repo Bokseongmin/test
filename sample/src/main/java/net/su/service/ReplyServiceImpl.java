@@ -26,6 +26,10 @@ public class ReplyServiceImpl implements ReplyService {
 	public void modify(ReplyVo vo) throws Exception {
 		replyDao.modify(vo);
 	}
+	
+	public ReplyVo reply_select(ReplyVo vo) throws Exception {
+		return replyDao.reply_select(vo);
+	}
 
 	public void delete(ReplyVo vo) throws Exception {
 		replyDao.delete(vo);
