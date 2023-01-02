@@ -32,6 +32,6 @@
 	<delete id="reply_delete" parameterType="ReplyVo">
 		DELETE
 		FROM reply
-		WHERE rno = #{rno} AND bno = ${bno};
+		WHERE rno = ${rno};
 	</delete>
 </mapper>
