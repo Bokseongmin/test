@@ -14,11 +14,19 @@
 		VALUES (#{title}, #{content}, #{writer});
 	</insert>
 	
+	<!-- 조회 -->
 	<select id="board_view" parameterType="int" resultType="BoardVo">
 		SELECT bno, title, content, writer, regDate, viewCnt
 		FROM board
 		WHERE bno=#{bno};
 	</select>
+	
+	<!-- 조회수 -->
+	<update id="board_viewCnt" parameterType="int">
+		UPDATE mvc.board 
+		SET viewCnt=viewCnt+1 
+		WHERE bno=#{bno};
+	</update>
 	
 	<!-- 수정 -->
 	<update id="board_modify" parameterType="BoardVo">

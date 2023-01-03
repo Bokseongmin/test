@@ -47,7 +47,6 @@
 								pattern="yyyy-MM-dd" /></td>
 						<td>${list.writer}</td>
 						<td>${list.viewCnt}</td>
-
 					</tr>
 				</c:forEach>
 			</table>

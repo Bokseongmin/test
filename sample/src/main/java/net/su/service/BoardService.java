@@ -11,6 +11,8 @@ public interface BoardService {
 	
 	public BoardVo view(int bno) throws Exception; //조회
 	
+	public void viewCnt(int bno) throws Exception; //조회수
+	
 	public void modify(BoardVo vo) throws Exception; //수정
 	
 	public void delete(int bno) throws Exception; //삭제

@@ -49,10 +49,11 @@ public class BoardController {
 	// 조회
 	@RequestMapping(value = "/view", method = RequestMethod.GET)
 	public void getView(@RequestParam("bno") int bno, Model model) throws Exception {
+		service.viewCnt(bno);
 		BoardVo vo = service.view(bno);
-
-		model.addAttribute("view", vo);
 		
+		model.addAttribute("view", vo);
+
 		//댓글 조회
 		List<ReplyVo> reply = replyService.list(bno);
 		model.addAttribute("reply", reply);

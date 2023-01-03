@@ -47,6 +47,10 @@
 					<label class="control-label">작성일</label> <span><fmt:formatDate
 							value="${view.regDate}" pattern="yyyy-MM-dd" /></span>
 				</div>
+				<div class="form-group">
+					<label class="ontrol-label">조회수</label> <input type="text"
+						class="form-control" value="${view.viewCnt}" readonly="readonly" />
+				</div>
 
 				<div class="form-group">
 					<button type="button" class="btn btn-warning"
